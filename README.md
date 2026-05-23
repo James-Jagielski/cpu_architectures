@@ -20,6 +20,7 @@ Use Icarus Verilog to compile your SystemVerilog files:
 Inside your testbench, include:
 
 ```$dumpfile("wave.vcd");```
+
 ```$dumpvars(0, tb_name);```
 
 After running simulation, open the waveform:

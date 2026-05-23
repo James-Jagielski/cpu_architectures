@@ -19,12 +19,11 @@ Use Icarus Verilog to compile your SystemVerilog files:
 3. Generate waveforms
 Inside your testbench, include:
 ```$dumpfile("wave.vcd");
-
 $dumpvars(0, tb_name);```
 After running simulation, open the waveform:
 ```gtkwave wave.vcd```
 
-4. Typical workflow
+5. Typical workflow
 ```iverilog -g2012 -o sim.out hdl/*.sv tb/*.sv```
 ```vvp sim.out```
 ```gtkwave wave.vcd```

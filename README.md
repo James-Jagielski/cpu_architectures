@@ -8,7 +8,7 @@ Use Icarus Verilog to compile your SystemVerilog files:
 
 ```iverilog -g2012 -o your_module.out hdl/your_module.sv tb/your_testbench.sv```
 * -g2012 enables SystemVerilog support
-* -o sim.out sets the simulation output file
+* -o your_module.out sets the simulation output file
 
 2. Run the simulation
 ```vvp your_module.out```

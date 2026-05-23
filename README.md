@@ -6,12 +6,12 @@ This contains RISCV processor designs extending from my undergraduate class desi
 1. Compile the design
 Use Icarus Verilog to compile your SystemVerilog files:
 
-```iverilog -g2012 -o sim.out hdl/your_module.sv tb/your_testbench.sv```
+```iverilog -g2012 -o your_module.out hdl/your_module.sv tb/your_testbench.sv```
 * -g2012 enables SystemVerilog support
 * -o sim.out sets the simulation output file
 
 2. Run the simulation
-```vvp sim.out```
+```vvp your_module.out```
 * Execute your testbench
 * Print any ```$display``` output
 * Generate waveform files (if enabled)
@@ -29,6 +29,6 @@ After running simulation, open the waveform:
 
 4. Typical workflow
 
-```iverilog -g2012 -o sim.out hdl/*.sv tb/*.sv```
-```vvp sim.out```
+```iverilog -g2012 -o *.out hdl/*.sv tb/*.sv```
+```vvp your_module.out```
 ```gtkwave wave.vcd```

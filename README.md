@@ -29,7 +29,7 @@ After running simulation, open the waveform:
 
 4. Typical workflow
 
-```iverilog -g2012 -o *.out hdl/*.sv tb/*.sv```
+```iverilog -g2012 -o *.out hdl/*.sv hdl/tests/*.sv```
 
 ```vvp your_module.out```
 

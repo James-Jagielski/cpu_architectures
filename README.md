@@ -2,7 +2,7 @@
 This contains RISCV processor designs extending from my undergraduate class designs
 
 
-# Testing with Icarus Verilog - not ran with all blocks. I found verilator to interface better
+# Testing with Icarus Verilog - not ran with all blocks. I found vivado to interface better
 1. Compile the design
 Use Icarus Verilog to compile your SystemVerilog files:
 

@@ -6,7 +6,7 @@ This contains RISCV processor designs extending from my undergraduate class desi
 1. Compile the design
 Use Icarus Verilog to compile your SystemVerilog files:
 
-```iverilog -g2012 -o your_module.out hdl/your_module.sv tb/your_testbench.sv```
+```iverilog -g2012 -o your_module.out hdl/your_module.sv hdl/tests/your_module.sv```
 * -g2012 enables SystemVerilog support
 * -o your_module.out sets the simulation output file
 

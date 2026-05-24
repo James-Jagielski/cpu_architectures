@@ -65,7 +65,7 @@ initial begin
   a = 0; b = 0; control = control.first;
   errors = 0;
   // Edit the alu_testcases.memh file to add more test cases!
-  $readmemh("alu_testcases.memh", test_vector);
+  $readmemh("tests/alu_testcases.memh", test_vector);
   loop = 1;
   for(alu_control_t op = ALU_AND; op != op.last; op = op.next) errors_by_op[op] = 0;
   while (loop) begin

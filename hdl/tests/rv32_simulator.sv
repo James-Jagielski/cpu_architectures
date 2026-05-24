@@ -99,7 +99,7 @@ end
 always #5 clk = ~clk;
 
 // Force end the solution if an infinite loop lasts too long.
-parameter INFINITE_LOOP_LENGTH=4;
+parameter INFINITE_LOOP_LENGTH=10;
 logic [31:0] PC_buffer [$:INFINITE_LOOP_LENGTH];
 logic all_equal = 1'b1;
 always @(posedge clk) begin

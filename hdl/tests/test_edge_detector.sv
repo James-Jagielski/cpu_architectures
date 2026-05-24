@@ -1,5 +1,5 @@
+`timescale 1ns/1ps
 module test_edge_detectors;
-
 logic clk, rst, in;
 wire  positive_edge, negative_edge;
 

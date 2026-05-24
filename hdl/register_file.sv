@@ -22,6 +22,122 @@ output logic [31:0] rd_data0, rd_data1;
 
 logic [31:0] x00; 
 always_comb x00 = 32'd0; // ties x00 to ground
+wire [31:0] x01,x02,x03,x04,x05,x06,x07,x08,x09,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21,x22,x23,x24,x25,x26,x27,x28,x29,x30,x31;
+logic [31:0] wr_enas;
+// create 31 registers
+register #(.N(32), .RESET(0)) register_x1 (.clk(clk), .rst(rst), .ena(wr_enas[1]), .d(wr_data), .q(x01));
+register #(.N(32), .RESET(0)) register_x2 (.clk(clk), .rst(rst), .ena(wr_enas[2]), .d(wr_data), .q(x02));
+register #(.N(32), .RESET(0)) register_x3 (.clk(clk), .rst(rst), .ena(wr_enas[3]), .d(wr_data), .q(x03));
+register #(.N(32), .RESET(0)) register_x4 (.clk(clk), .rst(rst), .ena(wr_enas[4]), .d(wr_data), .q(x04));
+register #(.N(32), .RESET(0)) register_x5 (.clk(clk), .rst(rst), .ena(wr_enas[5]), .d(wr_data), .q(x05));
+register #(.N(32), .RESET(0)) register_x6 (.clk(clk), .rst(rst), .ena(wr_enas[6]), .d(wr_data), .q(x06));
+register #(.N(32), .RESET(0)) register_x7 (.clk(clk), .rst(rst), .ena(wr_enas[7]), .d(wr_data), .q(x07));
+register #(.N(32), .RESET(0)) register_x8 (.clk(clk), .rst(rst), .ena(wr_enas[8]), .d(wr_data), .q(x08));
+register #(.N(32), .RESET(0)) register_x9 (.clk(clk), .rst(rst), .ena(wr_enas[9]), .d(wr_data), .q(x09));
+register #(.N(32), .RESET(0)) register_x10 (.clk(clk), .rst(rst), .ena(wr_enas[10]), .d(wr_data), .q(x10));
+register #(.N(32), .RESET(0)) register_x11 (.clk(clk), .rst(rst), .ena(wr_enas[11]), .d(wr_data), .q(x11));
+register #(.N(32), .RESET(0)) register_x12 (.clk(clk), .rst(rst), .ena(wr_enas[12]), .d(wr_data), .q(x12));
+register #(.N(32), .RESET(0)) register_x13 (.clk(clk), .rst(rst), .ena(wr_enas[13]), .d(wr_data), .q(x13));
+register #(.N(32), .RESET(0)) register_x14 (.clk(clk), .rst(rst), .ena(wr_enas[14]), .d(wr_data), .q(x14));
+register #(.N(32), .RESET(0)) register_x15 (.clk(clk), .rst(rst), .ena(wr_enas[15]), .d(wr_data), .q(x15));
+register #(.N(32), .RESET(0)) register_x16 (.clk(clk), .rst(rst), .ena(wr_enas[16]), .d(wr_data), .q(x16));
+register #(.N(32), .RESET(0)) register_x17 (.clk(clk), .rst(rst), .ena(wr_enas[17]), .d(wr_data), .q(x17));
+register #(.N(32), .RESET(0)) register_x18 (.clk(clk), .rst(rst), .ena(wr_enas[18]), .d(wr_data), .q(x18));
+register #(.N(32), .RESET(0)) register_x19 (.clk(clk), .rst(rst), .ena(wr_enas[19]), .d(wr_data), .q(x19));
+register #(.N(32), .RESET(0)) register_x20 (.clk(clk), .rst(rst), .ena(wr_enas[20]), .d(wr_data), .q(x20));
+register #(.N(32), .RESET(0)) register_x21 (.clk(clk), .rst(rst), .ena(wr_enas[21]), .d(wr_data), .q(x21));
+register #(.N(32), .RESET(0)) register_x22 (.clk(clk), .rst(rst), .ena(wr_enas[22]), .d(wr_data), .q(x22));
+register #(.N(32), .RESET(0)) register_x23 (.clk(clk), .rst(rst), .ena(wr_enas[23]), .d(wr_data), .q(x23));
+register #(.N(32), .RESET(0)) register_x24 (.clk(clk), .rst(rst), .ena(wr_enas[24]), .d(wr_data), .q(x24));
+register #(.N(32), .RESET(0)) register_x25 (.clk(clk), .rst(rst), .ena(wr_enas[25]), .d(wr_data), .q(x25));
+register #(.N(32), .RESET(0)) register_x26 (.clk(clk), .rst(rst), .ena(wr_enas[26]), .d(wr_data), .q(x26));
+register #(.N(32), .RESET(0)) register_x27 (.clk(clk), .rst(rst), .ena(wr_enas[27]), .d(wr_data), .q(x27));
+register #(.N(32), .RESET(0)) register_x28 (.clk(clk), .rst(rst), .ena(wr_enas[28]), .d(wr_data), .q(x28));
+register #(.N(32), .RESET(0)) register_x29 (.clk(clk), .rst(rst), .ena(wr_enas[29]), .d(wr_data), .q(x29));
+register #(.N(32), .RESET(0)) register_x30 (.clk(clk), .rst(rst), .ena(wr_enas[30]), .d(wr_data), .q(x30));
+register #(.N(32), .RESET(0)) register_x31 (.clk(clk), .rst(rst), .ena(wr_enas[31]), .d(wr_data), .q(x31));
+
+// Read ports
+always_comb begin : read_mux0
+  case(rd_addr0)
+    // python:  print("\n".join(["5'd%02d : rd_data0 = x%02d;"%(i,i) for i in range(0,32)])
+    5'd00 : rd_data0 = x00;
+    5'd01 : rd_data0 = x01;
+    5'd02 : rd_data0 = x02;
+    5'd03 : rd_data0 = x03;
+    5'd04 : rd_data0 = x04;
+    5'd05 : rd_data0 = x05;
+    5'd06 : rd_data0 = x06;
+    5'd07 : rd_data0 = x07;
+    5'd08 : rd_data0 = x08;
+    5'd09 : rd_data0 = x09;
+    5'd10 : rd_data0 = x10;
+    5'd11 : rd_data0 = x11;
+    5'd12 : rd_data0 = x12;
+    5'd13 : rd_data0 = x13;
+    5'd14 : rd_data0 = x14;
+    5'd15 : rd_data0 = x15;
+    5'd16 : rd_data0 = x16;
+    5'd17 : rd_data0 = x17;
+    5'd18 : rd_data0 = x18;
+    5'd19 : rd_data0 = x19;
+    5'd20 : rd_data0 = x20;
+    5'd21 : rd_data0 = x21;
+    5'd22 : rd_data0 = x22;
+    5'd23 : rd_data0 = x23;
+    5'd24 : rd_data0 = x24;
+    5'd25 : rd_data0 = x25;
+    5'd26 : rd_data0 = x26;
+    5'd27 : rd_data0 = x27;
+    5'd28 : rd_data0 = x28;
+    5'd29 : rd_data0 = x29;
+    5'd30 : rd_data0 = x30;
+    5'd31 : rd_data0 = x31;
+  endcase
+end
+
+always_comb begin : read_mux1
+  case(rd_addr1)
+     // python: print("\n".join(["5'd%02d : rd_data1 = x%02d;"%(i,i) for i in range(0,32)]))
+    5'd00 : rd_data1 = x00;
+    5'd01 : rd_data1 = x01;
+    5'd02 : rd_data1 = x02;
+    5'd03 : rd_data1 = x03;
+    5'd04 : rd_data1 = x04;
+    5'd05 : rd_data1 = x05;
+    5'd06 : rd_data1 = x06;
+    5'd07 : rd_data1 = x07;
+    5'd08 : rd_data1 = x08;
+    5'd09 : rd_data1 = x09;
+    5'd10 : rd_data1 = x10;
+    5'd11 : rd_data1 = x11;
+    5'd12 : rd_data1 = x12;
+    5'd13 : rd_data1 = x13;
+    5'd14 : rd_data1 = x14;
+    5'd15 : rd_data1 = x15;
+    5'd16 : rd_data1 = x16;
+    5'd17 : rd_data1 = x17;
+    5'd18 : rd_data1 = x18;
+    5'd19 : rd_data1 = x19;
+    5'd20 : rd_data1 = x20;
+    5'd21 : rd_data1 = x21;
+    5'd22 : rd_data1 = x22;
+    5'd23 : rd_data1 = x23;
+    5'd24 : rd_data1 = x24;
+    5'd25 : rd_data1 = x25;
+    5'd26 : rd_data1 = x26;
+    5'd27 : rd_data1 = x27;
+    5'd28 : rd_data1 = x28;
+    5'd29 : rd_data1 = x29;
+    5'd30 : rd_data1 = x30;
+    5'd31 : rd_data1 = x31;
+  endcase
+end
+
+// behavioral decoder: 
+always_comb begin : write_enable_decoder_shifter
+  wr_enas = wr_ena ? (32'b1 << wr_addr) : 32'b0;
+end
 
 // DON'T DO THIS:
 // logic [31:0] register_file_registers [31:0];

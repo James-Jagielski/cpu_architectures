@@ -7,7 +7,7 @@ A synchronous register (batch of flip flops) with rst > ena.
 
 module register(clk, ena, rst, d, q);
 parameter N = 1;
-parameter RESET_VALUE = 0; // Value to reset to.
+parameter RESET = 0; // Value to reset to.
 
 input wire clk, ena, rst;
 input wire [N-1:0] d;
@@ -15,7 +15,7 @@ output logic [N-1:0] q;
 
 always_ff @(posedge clk) begin
   if (rst) begin
-    q <= RESET_VALUE;
+    q <= RESET;
   end
   else begin
     if (ena) begin

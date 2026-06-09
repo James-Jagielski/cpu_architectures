@@ -1,6 +1,9 @@
 # cpu_architectures
 This contains RISCV processor designs extending from my undergraduate class designs
 
+## Multicycle CPU
+![screenshot](./multicycle_cpu.png)
+
 
 # Testing with Icarus Verilog
 1. Compile the design

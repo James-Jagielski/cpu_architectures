@@ -1,36 +1,4 @@
-# cpu_architectures
-This contains RISCV processor designs extending from my undergraduate class designs
+# Walk through each block and how it functions
+This describes the blocks up to the full implementation of the cpu core
 
-
-# Testing with Icarus Verilog
-1. Compile the design
-Use Icarus Verilog to compile your SystemVerilog files:
-
-```iverilog -g2012 -o your_module.out hdl/your_module.sv hdl/tests/your_module.sv```
-* -g2012 enables SystemVerilog support
-* -o your_module.out sets the simulation output file
-
-2. Run the simulation
-```vvp your_module.out```
-* Execute your testbench
-* Print any ```$display``` output
-* Generate waveform files (if enabled)
-
-3. Generate waveforms
-Inside your testbench, include:
-
-```$dumpfile("wave.vcd");```
-
-```$dumpvars(0, tb_name);```
-
-After running simulation, open the waveform:
-
-```gtkwave wave.vcd```
-
-4. Typical workflow
-
-```iverilog -g2012 -o *.out hdl/*.sv hdl/tests/*.sv```
-
-```vvp your_module.out```
-
-```gtkwave wave.vcd```
+## adder_1.sv
